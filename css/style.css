@@ -37,12 +37,9 @@ a {
 /* ------------------ Header -------------------- */
 header img {
   height: auto;
-  max-width: 100%; }
+  width: 100%; }
 
-@media (min-width: 769px) {
-  header img {
-    height: auto;
-    max-width: 100%; } }
+
 /* ------------------- Main =---------------- */
 #main h2 {
   color: #a9a9a9;
