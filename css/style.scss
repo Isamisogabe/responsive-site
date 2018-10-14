@@ -1,0 +1,149 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+//font-family
+$baseFontfamily: "游ゴシック", YuGothic, "メイリオ", Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// color 
+$subColor: #a9a9a9;
+$baseColor: #cfcfcf;
+$fontColor: #4c4c4c;
+$fontWhiteColor: #fff;
+
+// -------------------- base ---------------- */
+
+html{
+    font-size: 18px;
+}
+
+body{
+    color: $fontColor;
+    font-family: $baseFontfamily;
+    line-height: 1.6;
+}
+
+a {
+    @include link-colors($baseColor, darken($baseColor, 10%), lighten($baseColor, 10%));
+    text-decoration: none;
+}
+
+/* ----------------------- Align -------------------- */
+.text-center{
+    text-align: center;
+}
+
+/* ----------------------- Layout --------------------- */
+.block-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ------------------------- Font ------------------ */
+.abel {
+    font-family: 'Abel', sans-serif;
+}
+// desktop
+@media (min-width: 769px) {
+    /* ----------------------- Base ----------------- */
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* ------------------ Header -------------------- */
+header {
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+}
+// desktop
+@media (min-width: 769px) {
+    header {
+        img {
+            height: auto;
+            max-width: 100%;
+        }
+    }
+}
+/* ------------------- Main =---------------- */
+#main {
+    h2 {
+        color: $subColor;
+        margin: 30px 0;
+        font-size: 3.2rem;
+        font-weight: bold;
+        @extend .text-center
+    }
+    .container {
+        @include display-flex;
+        justify-content: space-between;
+        @include flex-direction(column);
+    }
+    .box {
+        @include flex(1);
+        margin: 10px;
+        
+        background-color: $baseColor;
+        @include box-sizing(border-box);
+        
+    }
+    h3 {
+        color: $subColor;
+        @extend .abel;
+        font-size: 2.4rem;
+        font-weight: bold;
+        @extend .text-center;
+        padding: 10px 0;
+    }
+    p {
+        padding: 40px 0;
+        @extend .text-center;
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: $fontWhiteColor;
+        background-color: $subColor;
+    }
+}
+// desktop
+@media (min-width: 769px) {
+    #main{
+        .container {
+            @include flex-direction(row);
+            justify-content: space-between;
+        }
+    }
+        
+}
+/* ---------------------- footer ---------------- */
+
+footer {
+    background-color: $baseColor;
+    
+    div {
+        width: 40%;
+        margin: 0 auto;
+        @extend .text-center;
+        padding: 10px;
+        padding-left: auto;
+        padding-right: auto;
+    }
+    p {
+        color: $subColor;
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+    a {
+        background-color: $subColor;
+        color: #fontWhiteColor;
+        font-size: 1.6rem;
+        font-weight: bold;
+        display: block;
+        padding: 10px 0;
+        @include border-radius(4px);
+    }
+}
